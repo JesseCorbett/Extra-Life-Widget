@@ -33,9 +33,9 @@
         }
 
         .icon {
-            width: 75px;
-            height: 75px;
-            margin: 32.5px 10px;
+            width: 65px;
+            height: 65px;
+            margin: 37.5px 10px;
         }
 
         .text {
@@ -46,14 +46,22 @@
             height: 50px;
             text-align: center;
             font-size: 15px;
-            line-height: 50px;
             font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .label {
+            width: 100%;
         }
 
         .message {
             margin: auto 0;
             text-align: center;
             font-size: 15px;
+            padding: 0 5px;
         }
 
         #progress {
@@ -105,23 +113,23 @@
 <body>
 <div>
     <div id="first" class="donation">
-        <img class="icon"></i>
+        <!-- <img class="icon"></i> -->
         <div class="text">
-            <div class="name"></div>
+            <div class="name"><span class="label"></span></div>
             <div class="message"></div>
         </div>
     </div>
     <div id="second" class="donation">
-        <img class="icon"></i>
+        <!-- <img class="icon"></i> -->
         <div class="text">
-            <div class="name"></div>
+            <div class="name"><span class="label"></span></div>
             <div class="message"></div>
         </div>
     </div>
     <div id="third" class="donation">
-        <img class="icon"></i>
+        <!-- <img class="icon"></i> -->
         <div class="text">
-            <div class="name"></div>
+            <div class="name"><span class="label"></span></div>
             <div class="message"></div>
         </div>
     </div>
@@ -143,16 +151,16 @@
         const second = items[items.length - 2]
         const third = items[items.length - 3]
 
-        $('#first .icon').attr('src', 'https:' + first.avatarImageURL)
-        $('#first .name').text(first.displayName + ' - $' + formatMoney(first.amount))
+        // $('#first .icon').attr('src', 'https:' + first.avatarImageURL)
+        $('#first .label').text(first.displayName + ' - $' + formatMoney(first.amount))
         $('#first .message').text(first.message ? first.message : '[No Message]')
 
-        $('#second .icon').attr('src', 'https:' + second.avatarImageURL)
-        $('#second .name').text(second.displayName + ' - $' + formatMoney(second.amount))
+        // $('#second .icon').attr('src', 'https:' + second.avatarImageURL)
+        $('#second .label').text(second.displayName + ' - $' + formatMoney(second.amount))
         $('#second .message').text(second.message ? second.message : '[No Message]')
 
-        $('#third .icon').attr('src', 'https:' + third.avatarImageURL)
-        $('#third .name').text(third.displayName + ' - $' + formatMoney(third.amount))
+        // $('#third .icon').attr('src', 'https:' + third.avatarImageURL)
+        $('#third .label').text(third.displayName + ' - $' + formatMoney(third.amount))
         $('#third .message').text(third.message ? third.message : '[No Message]')
     }
 
