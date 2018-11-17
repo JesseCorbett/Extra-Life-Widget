@@ -181,11 +181,15 @@
     function tick() {
         $.ajax({
             url: "https://www.extra-life.org/api/participants/344967/donations?orderBy=createdDateUTC",
+            type: 'GET',
+            crossDomain: true,
             success: updateList
         })
 
         $.ajax({
             url: "https://www.extra-life.org/api/participants/344967",
+            type: 'GET',
+            crossDomain: true,
             success: updateCounter
         })
 
